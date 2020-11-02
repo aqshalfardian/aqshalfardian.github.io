@@ -20,7 +20,8 @@
          var len=data.length;
         if(len<1) //menampilkan pesan eror jika tidak ada kata terisi
          { 
-    $('.error').show();
+        $('.error').show();
+        event.preventDefault();
         }
     else //menyembunyikan pesan eror jika terisi
     {
