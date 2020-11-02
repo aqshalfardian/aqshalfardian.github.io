@@ -1,0 +1,41 @@
+<html>
+    <script src="https://ajaxx.googleapis.com/ajax/libs/jquery/3.5.1/jquesry.min.js"> //mendefinisikan jquery
+    </script>
+
+<head>
+    <style> //menambahkan style css
+    style.css .label {float: left; width: 120px; }
+    .infobox {width: 200px; }
+    .error { color: red; padding-left: 10px; }
+    .submit { margin-left: 125px; margin-top: 10px;} 
+    </style>
+</head>
+
+<body>
+    <script> //mendefinisikan eror
+    $(document).ready(function() {
+    $('.error').hide();
+    $('.submit').click(function(event){
+         var data=$('.infobox').val();
+         var len=data.length;
+        if(len<1) //menampilkan pesan eror jika tidak ada kata terisi
+         { 
+    $('.error').show();
+        event.preventDefault();
+        }
+    else //menyembunyikan pesan eror jika terisi
+    {
+    $('.error').hide(); 
+    }
+     });
+    });
+    </script>
+
+    <form id="signup" method="post" action="">
+    <div><span class="label">User Id *</span><input type="text" class="infobox" name="userid"
+    /><span class="error"> This field cannot be blank</span></div> //menambahkan pesan eror
+    <input class="submit" type="submit" value="Submit">
+    </form>
+
+</body>
+</html> 
